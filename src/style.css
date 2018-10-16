@@ -110,3 +110,13 @@ body{
     height: 200px;
 }
 /*end footer*/
+
+/*Style Page Dang Tin*/
+#s5h-banner {
+   height: 623px;
+	background: url(./images/bg-bn.jpg) no-repeat center top;
+	-webkit-background-size: cover;
+	background-size: cover;
+	margin-top: 88px;
+	overflow: hidden;
+}
