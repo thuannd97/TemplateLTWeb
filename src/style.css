@@ -36,11 +36,12 @@ body{
     padding: 0;
     justify-content: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 30px;
 }
 
 .options .slogan{
-    margin-left: 40%;
-    font-size: 20px;
+    margin-left: 500px;
+    font-size: 30px;
     color: #555555;
 }
 
@@ -59,10 +60,16 @@ body{
     text-align: center;
     width: 226px;
     margin: 20px;
+    margin-top: 30px;
 }
 
 .options .option span{
     color: #5b5b5b;
+}
+
+hr{
+    width: 20%; 
+    margin-left: 635px;
 }
 
 /*end options*/
@@ -74,6 +81,7 @@ body{
     height: 370px;
     display: flex;
     background-color:white;
+    margin-left: 60px;
 }
 
 .description ul{
@@ -91,8 +99,8 @@ body{
 .description .dev .detail{
     margin-top: 20px;
     height: 100px;
-    background-color: bisque;
-    border-radius: 5%;
+    background-color: #f2f5f7;
+    border-radius: 5px;
 }
 
 .description .dev img{
@@ -100,6 +108,15 @@ body{
     width: 150px;
     margin: 20px;
     border-radius: 100%;
+}
+
+.dev-title{
+    text-align: center;
+    margin-left: 60px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #5b5b5b;
+    font-size: 30px;
+    margin-top: 50px;
 }
 /*end description*/
 
