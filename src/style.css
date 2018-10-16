@@ -1,0 +1,112 @@
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/*start menu*/
+.menu ul{
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+}
+
+.menu li{
+    padding: 8px 16px;
+}
+
+.menu li:hover{
+    background-color: #eeeeee;
+}
+/*end menu*/
+
+/*start banner*/
+.banner{
+    background-color: wheat;
+    width: 100%;
+    height: 535px;
+}
+/*end banner*/
+
+/*start option*/
+.options{
+    background-color:white;
+    width: 100%;
+    height: 300px;
+    flex-direction: row;
+    padding: 0;
+    justify-content: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.options .slogan{
+    margin-left: 40%;
+    font-size: 20px;
+    color: #555555;
+}
+
+.options span{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.options ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+
+.options .option{
+    text-align: center;
+    width: 226px;
+    margin: 20px;
+}
+
+.options .option span{
+    color: #5b5b5b;
+}
+
+/*end options*/
+
+/*start description*/
+.description{
+    background-color: azure;
+    width: 100%;
+    height: 370px;
+    display: flex;
+    background-color:white;
+}
+
+.description ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.description .dev{
+    text-align: center;
+    width: 420px;
+    margin: 20px;
+}
+
+.description .dev .detail{
+    margin-top: 20px;
+    height: 100px;
+    background-color: bisque;
+    border-radius: 5%;
+}
+
+.description .dev img{
+    text-align: center;
+    width: 150px;
+    margin: 20px;
+    border-radius: 100%;
+}
+/*end description*/
+
+/*start footer*/
+.footer{
+    background-color:white;
+    width:100%;
+    height: 200px;
+}
+/*end footer*/
