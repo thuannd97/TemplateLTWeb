@@ -1,0 +1,23 @@
+{
+  "name": "templateltweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thuannd97/TemplateLTWeb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thuannd97/TemplateLTWeb/issues"
+  },
+  "homepage": "https://github.com/thuannd97/TemplateLTWeb#readme",
+  "dependencies": {
+    "lite-server": "^2.4.0"
+  }
+}
