@@ -2,12 +2,77 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>DANH SÁCH ĐƠN HÀNG</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <link rel="stylesheet" href="style-list-order.css">
     </head>
     <body>
-        <script src="" async defer></script>
+        <div class="container" style="height: 100%;">
+            <ul class="menu">
+                <li><a class="active" href="index.html" title="TRANG CHỦ">TRANG CHỦ</a></li>
+                <li><a href="#" title="GIỚI THIỆU">GIỚI THIỆU</a></li>
+                <li><a href="#" title="TIN TỨC">HƯỚNG DẪN SHIPPER</a></li>
+                <li><a href="#" title="HƯỚNG DẪN">HƯỚNG DẪN SHOP</a></li>
+                <li><a href="#" title="CHÍNH SÁCH">CHÍNH SÁCH</a></li>
+                <li><a href="#" title="CHÍNH SÁCH">ĐĂNG NHẬP</a></li>
+                <li><a href="#" title="CHÍNH SÁCH">ĐĂNG KÝ</a></li>
+                <li><a href="list-order.html" title="CHÍNH SÁCH">DANH SÁCH ĐƠN HÀNG</a></li>
+            </ul>
+        </div>
+        <div class="banner">
+                <img src="./images/banner.png" style="height: 100%; width: 100%;"/>
+        </div>
+        <div class="main-content">
+            <div class="form-filter">
+                <input type="text"/>
+                <input type="text"/>
+                <input type="text"/>
+            </div>
+            <br>
+            <div class="list-order">
+                <div class="order">
+                    <div class="avatar">
+                        <img id="avatar" src=""/>
+                    </div>
+                    <span id="username"></span>
+                    <p id="content"></p>
+                    <button>điện thoại</button>
+                    <button>chat</button>
+                    <span id="created-date"></span>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+
+            <div class="side1"></div>
+            <div class="contact">
+                <span>LIÊN HỆ</span>
+                <p>ĐC: Tòa nhà HH2C KĐT Linh Đàm - Hoàng Mai - Hà Nội</p><br>
+                <p>ĐT: 02462.947.023 DĐ: 0976.176.236</p>
+            </div>
+            <div class="form-contact">
+                <input type="text" placeholder="điện thoại" style=" border-radius: 5px; height: 42px;"/>
+                <input type="text" placeholder="địa chỉ" style="margin-left: 20px; border-radius: 5px;height: 42px;"/>
+                <input type="text" placeholder="email" style="margin-left: 20px; border-radius: 5px;height: 42px;"/><br>
+                <textarea placeholder="nội dung" rows="2" cols="50" style="width: 478px; height: 106px; margin-top: 20px; border-radius: 5px; resize: none"></textarea><br>
+                <button style="width: 144.867px;height: 30px; border-radius: 5px; margin-top: 20px;">GỬI LIÊN HỆ</button>
+            </div>
+            <div class="side2"></div>
+        </div>
+       <script type="text/javascript">
+        $(document).ready(function() {
+            $.getJSON('order.json', function(data){
+                $.each(data, function(i, value){
+                    console.log(value);
+                    $('#username').html('<span>' +value.shop.username+ '</span>');
+                    $('#avatar').attr('src', value.shop.avatar);
+                    $('#created-date').html('<span>' +value.createdDate+ '</span>');
+                });
+            });
+
+        });         
+    </script>
     </body>
 </html>

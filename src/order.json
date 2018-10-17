@@ -1,0 +1,20 @@
+[
+    {
+        "shop": {
+             "avatar": "./images/avatar.png",
+             "username": "thuannd"
+        },
+        "content": "tu A den B",
+        "createdDate": "17/10/2018"
+    }, 
+
+    {
+        "shop": {
+             "avatar": "./images/avatar.png",
+             "username": "thuannd"
+        },
+        "content": "tu A den B",
+        "createdDate": "17/10/2018"
+    }
+
+]
