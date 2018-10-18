@@ -32,16 +32,7 @@
             </div>
             <br>
             <div class="list-order">
-                <div class="order">
-                    <div class="avatar">
-                        <img id="avatar" src=""/>
-                    </div>
-                    <span id="username"></span>
-                    <p id="content"></p>
-                    <button>điện thoại</button>
-                    <button>chat</button>
-                    <span id="created-date"></span>
-                </div>
+                
             </div>
         </div>
         <div class="footer">
@@ -64,14 +55,10 @@
        <script type="text/javascript">
         $(document).ready(function() {
             $.getJSON('order.json', function(data){
-                $.each(data, function(i, value){
-                    console.log(value);
-                    $('#username').html('<span>' +value.shop.username+ '</span>');
-                    $('#avatar').attr('src', value.shop.avatar);
-                    $('#created-date').html('<span>' +value.createdDate+ '</span>');
-                });
+                $.each(data, function(i, order){
+                    $('.list-order').append('<div class="order"><div class="avatar"><img id="avatar" src='+order.shop.avatar+'/></div><span id="username">'+order.shop.username+'</span><p id="content">'+order.content+'</p><button>điện thoại</button><button>chat</button><span id="created-date">'+order.createdDate+'</span></div>')
+                })
             });
-
         });         
     </script>
     </body>
