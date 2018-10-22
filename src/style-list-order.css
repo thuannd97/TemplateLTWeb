@@ -107,3 +107,9 @@ a{
     font-size: 14px;
 }
 /*end footer*/
+
+/*start display order*/
+.displayNone{
+    display: none;
+}
+/*end display order*/
