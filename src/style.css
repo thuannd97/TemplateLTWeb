@@ -20,8 +20,6 @@ a{
 .menu li:hover{
     background-color: #eeeeee;
 }
-
-
 /*end menu*/
 
 /*start banner*/
@@ -162,7 +160,7 @@ hr{
 
 .footer .form-contact input textarea{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
+    font-size: 14px;
 }
 /*end footer*/
 
