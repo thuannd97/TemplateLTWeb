@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+     
+    
+    </style>
+    <script type="text/javascript" charset="utf8" src="./js/jquery-3.2.1.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+    
+    <script type="text/javascript">
+      var map;
+      var  lat;
+      var  lng
+      function initMap(location) {
+      	console.log(location);
+          lat = location.coords.latitude;
+          lng = location.coords.longitude;
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: lat, lng: lng},
+          zoom: 15
+        });
+         var marker = new google.maps.Marker({
+          position: {lat: lat, lng: lng},
+          map: map,
+          title: 'Hello World!'
+        });
+      }
+
+       
+       
+       function getLatLng() {
+           alert("lat = " + lat + "; lng = " + lng);
+      }
+       
+     
+
+
+
+       $(document).ready(function(){
+       		navigator.geolocation.getCurrentPosition(initMap);
+       });
+    </script>
+  </head>
+  <body>
+		<form>
+         <input type="button" onclick="getLatLng()" value="Lay toa do hien tai" />
+      </form>
+		<div id="map"></div>
+    
+  </body>
+</html>

@@ -5,8 +5,18 @@
         <title>DANH SÁCH ĐƠN HÀNG</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <script type="text/javascript" charset="utf8" src="./js/jquery-3.2.1.min.js"></script>
+        <script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&libraries=places" >  
+        </script>
+        
+        
+        
+        
+
         <link rel="stylesheet" href="style-list-order.css">
+
+        
     </head>
     <body>
         <div class="container" style="height: 100%;">
@@ -25,11 +35,29 @@
                 <img src="./images/banner.png" style="height: 100%; width: 100%;"/>
         </div>
         <div class="main-content">
-            <div class="form-filter">
-                <input type="text" id="created-date" name="created-date"/>
-                <input type="text" id="created-by" name="created-by"/>
-                <input type="text" id="area" name="area"/>
+            <div id ="fil-map-get">
+                <div id ="fil-map">
+                <div class="form-filter">              
+                    <input type="text" name="" id="mapsearch" style="width: 350px ;text-align: center;margin: 50px auto" />                
+                </div>
+                <div id ="map-canvas"></div>
+            
             </div>
+    
+                <div>
+                 <form>
+                     <input type="button" onclick="getLatLng()" value="Lay toa do hien tai" style="height: 100%; margin-top: 0;margin-bottom: 270px"/>
+                 </form>
+                </div>        
+
+            </div>
+            
+
+            <div>
+                
+                <div id ="map-canvas"></div>    
+            </div>
+            
             <br>
             <div class="list-order">
                 
@@ -53,15 +81,17 @@
             <div class="side2"></div>
         </div>
        <script type="text/javascript">
-        var orders = [];
-        $(document).ready(function() {  
+        /*var orders = [];
+        $(document).ready(function() { 
+
             var listOrder = [];
             $.getJSON('order.json', function(data){
                 var listOrderHtml = '';
                 $.each(data, function(index, element){
-                    listOrderHtml += '<div class="order"><div class="avatar"><img id="avatar" src='+element.shop.avatar+'/></div><span id="username">'+element.shop.username+'</span><p id="content">'+element.content+'</p><button>điện thoại</button><button>chat</button><span id="created-date">'+element.createdDate+'</span></div>';
+                    listOrderHtml += '<div class="order"><div class="avatar"><img id="avatar" src='+element.shop.avatar+'></div><span id="username">'+element.shop.username+'</span><p id="content">'+element.content+'</p><button>điện thoại</button><button>chat</button><span id="created-date">'+element.createdDate+'</span></div>';
                     listOrder.push(element); 
                 });
+                console.log(listOrder);
                 $('.list-order').html(listOrderHtml);
                 var items = $('.order');
                 console.log(items);
@@ -77,8 +107,87 @@
                 });
             });
            
-        });     
+        });*/     
+
+            
+
+            
 
     </script>
+    <script type="text/javascript">
+
+
+    var map = new google.maps.Map(document.getElementById('map-canvas'),{
+            center:{
+                lat: 21.00240,
+                lng: 105.8186
+            },
+            zoom:15
+        });
+
+        var marker = new google.maps.Marker({
+            position:{
+                lat: 21.00240,
+                lng: 105.8186
+            },
+            map:map,
+            draggable: true
+        });
+
+        var searchBox = new google.maps.places.SearchBox(document.getElementById('mapsearch'));
+
+        google.maps.event.addListener(searchBox, 'places_changed', function(){
+
+            var places = searchBox.getPlaces();
+
+            var bounds = new google.maps.LatLngBounds();
+            var i, place;
+
+            for (i = 0 ; place = places[i];i++){
+
+                bounds.extend(place.geometry.location);
+                marker.setPosition(place.geometry.location);
+
+            }
+
+            map.fitBounds(bounds);
+            map.setZoom(15);
+        });
+    </script>
+    
+    <script type="text/javascript">
+      var map;
+      var  lat;
+      var  lng
+      function initMap(location) {
+        console.log(location);
+          lat = location.coords.latitude;
+          lng = location.coords.longitude;
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: lat, lng: lng},
+          zoom: 15
+        });
+         var marker = new google.maps.Marker({
+          position: {lat: lat, lng: lng},
+          map: map,
+          title: 'Hello World!'
+        });
+      }
+
+       
+       
+       function getLatLng() {
+           alert("lat = " + lat + "; lng = " + lng);
+      }
+       
+     
+
+
+
+       $(document).ready(function(){
+            navigator.geolocation.getCurrentPosition(initMap);
+       });
+    </script>
+
     </body>
 </html>
